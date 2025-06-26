@@ -26,6 +26,8 @@ export class GetApi implements OnInit {
     //debugger;
     this.http
       .get("http://www.accessrichmond.org/o2b2/api/donor/donorInfo.aspx")
+      //.get("/api/donor/donorInfo.aspx")
+
       .subscribe((result: any) => {
         //  debugger;
         this.userList = result;
