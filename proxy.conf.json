@@ -1,0 +1,8 @@
+{
+  "/api/*/*": {
+    "target": "https://www.accessrichmond.org/o2b2",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

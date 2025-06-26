@@ -1,0 +1,99 @@
+<p>User works</p>
+
+<div class="row p-3 border m-3 gap-3">
+  <div class="col-8 p-3 border">
+    <div class="card">
+      <div class="card-header bg-success">User List</div>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Sr No</th>
+              <th>userId</th>
+              <th>emailId</th>
+              <th>fullName</th>
+              <th>mobileNo</th>
+              <th>password</th>
+              <th>edit / delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(item of userList; track $index){
+            <tr>
+              <td>{{$index+1}}</td>
+              <td>{{item.tMasterID}}</td>
+              <td>{{item.Lname}}</td>
+              <td>{{item.Fname}}</td>
+              <td>{{item.Address}}</td>
+              <td>{{item.PostalCode}}</td>
+              <td>
+                <div class="row p-0 center">
+                  <button
+                    class="btn btn-primary btn-sm col-4"
+                    (click)="onEdit(item)"
+                  >
+                    Edit
+                  </button>
+                  <button class="btn btn-danger btn-sm col-4">Del</button>
+                </div>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 p-3 border">
+    <div class="card">
+      <div class="card-header bg-success">New User</div>
+      <div class="card-body">
+        <div class="d-grid gap-0 column-gap-3 p-3">
+          <div class="row">
+            <label for="" class="col-form-label">Email</label>
+            <input
+              type="text"
+              [(ngModel)]="userObject.emailId"
+              class="form-control"
+            />
+          </div>
+
+          <div class="row">
+            <label for="" class="col-form-label">Password</label>
+            <input
+              type="text"
+              [(ngModel)]="userObject.password"
+              class="form-control"
+            />
+          </div>
+
+          <div class="row">
+            <label for="" class="col-form-label">Full Name</label>
+            <input
+              type="text"
+              [(ngModel)]="userObject.fullName"
+              class="form-control"
+            />
+          </div>
+
+          <div class="row">
+            <label for="" class="col-form-label">Mobile No</label>
+            <input
+              type="text"
+              [(ngModel)]="userObject.mobileNo"
+              class="form-control"
+            />
+          </div>
+
+          <div class="row">
+            <button class="btn btn-secondary">Reset</button>
+          </div>
+
+          <div class="row">
+            <button class="btn btn-success" (click)="onSaveUser()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

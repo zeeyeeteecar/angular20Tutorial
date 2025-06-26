@@ -1,0 +1,30 @@
+<p>get-api works!</p>
+
+<div class="w-75 p-3 border">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>User Id</th>
+        <th>Usrr Name</th>
+        <th>User Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(item of userList; track $index){
+      <tr>
+        <td>{{$index+1}}</td>
+        <td>{{item.tMasterID}}</td>
+        <td>{{item.Lname}}</td>
+        <td>{{item.Fname}}</td>
+        <td>{{item.Address}}</td>
+        <td>{{item.PostalCode}}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+<pre>{{ prettyJson }}</pre>
+============================
+
+<pre>{{ userList | json }}</pre>
