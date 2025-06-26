@@ -38,7 +38,7 @@ export class User {
   getUsers() {
     this.http
       //.get("https://api.freeprojectapi.com/api/GoalTracker/getAllUsers")
-      .get("/api/donor/donorInfo.aspx")
+      .get("https://www.accessrichmond.org/o2b2/api/donor/donorInfo.aspx")
       .subscribe((result: any) => {
         //  debugger;
         this.userList = result;
